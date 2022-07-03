@@ -23,3 +23,7 @@ body {
   box-sizing: border-box;
   color: white;
 }
+
+.icon path {
+  fill: white;
+}
