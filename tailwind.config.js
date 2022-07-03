@@ -6,11 +6,15 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        poppins: ['Poppins', 'sans-serif'],
-        poorStory: ['Poor Story', 'cursive'],
-        DMsans: ['DM Sans', 'sans-serif']
-      }
+        poppins: ["Poppins", "sans-serif"],
+        poorStory: ["Poor Story", "cursive"],
+        DMsans: ["DM Sans", "sans-serif"],
+      },
+      colors: {
+        solidHeading: "#42446E",
+        lightContent: "#A7A7A7",
+      },
     },
   },
   plugins: [],
-}
+};
