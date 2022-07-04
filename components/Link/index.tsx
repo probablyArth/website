@@ -8,7 +8,7 @@ interface NavLink extends Common {
 
 const NavLink: FC<NavLink> = ({ children, href }) => {
   return (
-    <div className="mx-6 text-lightContent">
+    <div className="mx-6 text-lightContent hover:text-white">
       <Link href={href}>{children}</Link>
     </div>
   );
