@@ -27,3 +27,9 @@ body {
 .icon path {
   fill: white;
 }
+
+.avatar {
+  border: 5px solid;
+  border-color: #13b0f5;
+  border-radius: 50%;
+}

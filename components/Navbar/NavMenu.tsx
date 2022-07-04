@@ -5,7 +5,7 @@ import NavLink from "../Link";
 const NavMenu: FC<Common> = ({ classname }) => {
   return (
     <menu
-      className={`self-center flex flex-col bg-solidHeading text-center rounded-sm transition-all duration-300 p-2 w-2/3 ${classname}`}
+      className={`self-center flex flex-col bg-zinc-800 text-center rounded-sm transition-all duration-300 p-2 w-full shadow-2xl ${classname}`}
       id="menu"
     >
       <NavLink href="/">Home</NavLink>

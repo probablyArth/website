@@ -9,7 +9,6 @@ import { useState } from "react";
 
 const Navbar = () => {
   const [clicked, setClicked] = useState(false);
-  const menu = document.getElementById("menu");
 
   return (
     <>
