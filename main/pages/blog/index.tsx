@@ -5,20 +5,25 @@ import path from "path";
 import matter from "gray-matter";
 import { sortByDate } from "../../utils/sortDate";
 
-const Blog: NextPage = () => {
-  return <div>Blog</div>;
-};
+export default function Blog({ posts }: any) {
+  console.log(posts);
+  return (
+    <>
+      <div className="posts">
+        {posts.map((post: any, index: any) => {
+          return <h3 key={index}>{post.frontmatter.title}</h3>;
+        })}
+      </div>
+    </>
+  );
+}
 
 export async function getStaticProps() {
-  // Get files from the posts dir
   const files = fs.readdirSync(path.join("blogs"));
 
-  // Get slug and frontmatter from posts
   const posts = files.map((filename) => {
-    // Create slug
     const slug = filename.replace(".md", "");
 
-    // Get frontmatter
     const markdownWithMeta = fs.readFileSync(
       path.join("blogs", filename),
       "utf-8"
@@ -38,5 +43,3 @@ export async function getStaticProps() {
     },
   };
 }
-
-export default Blog;

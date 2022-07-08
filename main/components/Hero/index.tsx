@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 /* eslint-disable @next/next/no-img-element */
 const Hero = () => {
   return (
@@ -8,11 +10,15 @@ const Hero = () => {
         <span className="text-blue-500">Arth</span>
         <br /> I build fullstack webapps
       </h2>{" "}
-      <img
-        src="/avatar.svg"
-        alt=""
-        className="avatar md:max-w-xs max-w-[200px]"
-      />
+      <div className="box-content rounded-full  bg-blue-500 p-1">
+        <Image
+          width={300}
+          height={300}
+          src="/avatar.svg"
+          alt=""
+          className="rounded-full"
+        />
+      </div>
     </div>
   );
 };
