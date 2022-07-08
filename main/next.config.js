@@ -9,6 +9,7 @@ const { BLOG_URL } = process.env;
 
 module.exports = {
   async rewrites() {
+    console.log(BLOG_URL);
     return [
       {
         source: "/:path*",
