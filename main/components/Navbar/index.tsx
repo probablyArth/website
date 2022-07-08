@@ -1,5 +1,5 @@
 import Logo from "../Logo";
-import NavLink from "../Link";
+import NavLink, { BlogLink } from "../Link";
 import { BsGithub } from "react-icons/bs";
 import { TiSocialLinkedinCircular } from "react-icons/ti";
 import { AiFillTwitterCircle } from "react-icons/ai";
@@ -19,7 +19,7 @@ const Navbar = () => {
             <NavLink href="/">Home</NavLink>
             <NavLink href="/about">About</NavLink>
             <NavLink href="/techStack">Tech Stack</NavLink>
-            <NavLink href="/blog">Blog</NavLink>
+            <BlogLink>Blog</BlogLink>
             <NavLink href="/contact">Contact</NavLink>
             <div className="ml-4 flex items-center">
               <a

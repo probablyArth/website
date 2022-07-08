@@ -16,4 +16,12 @@ const NavLink: FC<NavLink> = ({ children, href }) => {
   );
 };
 
+export const BlogLink: FC<Common> = ({ children }) => {
+  return (
+    <div className="mx-6 text-lightContent hover:text-white">
+      <a href={process.env.BLOG_URL}>{children}</a>
+    </div>
+  );
+};
+
 export default NavLink;
