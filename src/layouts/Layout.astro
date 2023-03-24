@@ -29,14 +29,12 @@ const { title } = Astro.props;
       class="h-full flex justify-center dark:bg-[#101010] bg-white text-[#101010] dark:text-white"
     >
       <div
-        class="relative max-w-[1080px] min-h-screen h-full dark:bg-neutral-900 w-[90%] border-x-[2px] border-neutral-200 dark:border-stone-800 flex flex-col items-center px-16 py-6 text-left bg-neutral-100"
+        class="relative max-w-[1080px] min-h-screen h-full dark:bg-neutral-900 w-[90%] border-x-[2px] border-neutral-200 dark:border-stone-800 flex flex-col items-center px-16 py-6 text-left bg-neutral-100 gap-10"
       >
-        <nav
-          class="sticky top-0 flex justify-between w-full border-b-[1px] border-b-neutral-600 pb-4 text-left"
-        >
+        <nav class="sticky top-0 flex justify-between w-full py-4 text-left">
           <img
             src="/profile.jpeg"
-            alt="A starry night sky."
+            alt="@probablyarth"
             width="64"
             height="64"
             class="rounded-full"
@@ -52,7 +50,9 @@ const { title } = Astro.props;
             </div>
           </button>
         </nav>
-        <slot />
+        <div class="w-full">
+          <slot />
+        </div>
       </div>
     </div>
   </body>
