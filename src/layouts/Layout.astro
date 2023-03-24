@@ -3,6 +3,8 @@ export interface Props {
   title: string;
 }
 
+import Sun from "@astropub/icons/Sun";
+import Moon from "@astropub/icons/Moon";
 const { title } = Astro.props;
 ---
 
@@ -19,29 +21,68 @@ const { title } = Astro.props;
       rel="stylesheet"
     />
     <meta name="generator" content={Astro.generator} />
+
     <title>{title}</title>
   </head>
-  <body
-    class="min-h-screen h-full flex justify-center bg-black text-white"
-    style="font-family: 'DM Sans', sans-serif;"
-  >
+  <body class={`min-h-screen`} style="font-family: 'DM Sans', sans-serif;">
     <div
-      class="relative min-h-screen h-full bg-neutral-900 w-[90%] border-x-[2px] border-stone-800 flex flex-col items-center px-16 py-6 text-left"
+      class="h-full flex justify-center dark:bg-[#101010] bg-white text-[#101010] dark:text-white"
     >
-      <nav
-        class="sticky top-0 flex justify-between w-full border-b-[1px] border-b-neutral-600 pb-4 text-left"
+      <div
+        class="relative max-w-[1080px] min-h-screen h-full dark:bg-neutral-900 w-[90%] border-x-[2px] border-neutral-200 dark:border-stone-800 flex flex-col items-center px-16 py-6 text-left bg-neutral-100"
       >
-        <img
-          src="/profile.jpeg"
-          alt="A starry night sky."
-          width="64"
-          height="64"
-          class="rounded-full"
-          style="box-shadow: 0 0 1px transparent;"
-        />
-        <button>Switch Light mode</button>
-      </nav>
-      <slot />
+        <nav
+          class="sticky top-0 flex justify-between w-full border-b-[1px] border-b-neutral-600 pb-4 text-left"
+        >
+          <img
+            src="/profile.jpeg"
+            alt="A starry night sky."
+            width="64"
+            height="64"
+            class="rounded-full"
+            style="box-shadow: 0 0 1px transparent;"
+          />
+          {console.log({ theme: localStorage.getItem("theme") })}
+          <button id="themeToggle">
+            <div id="moon">
+              <Moon size="32" />
+            </div>
+            <div id="sun">
+              <Sun size="32" />
+            </div>
+          </button>
+        </nav>
+        <slot />
+      </div>
     </div>
   </body>
+  <script>
+    const themeToggleButton = document.getElementById("themeToggle");
+    themeToggleButton?.addEventListener("click", handleThemeToggle);
+    let theme = localStorage.getItem("theme");
+
+    if (theme === "dark") {
+      document.getElementById("sun")?.classList.add("hidden");
+      document.getElementById("moon")?.classList.remove("hidden");
+      document.body.classList.add("dark");
+    } else {
+      document.body.classList.remove("dark");
+      document.getElementById("sun")?.classList.remove("hidden");
+      document.getElementById("moon")?.classList.add("hidden");
+    }
+    function handleThemeToggle() {
+      let theme = localStorage.getItem("theme");
+      if (theme === "dark") {
+        localStorage.setItem("theme", "light");
+        document.getElementById("sun")?.classList.remove("hidden");
+        document.getElementById("moon")?.classList.add("hidden");
+        document.body.classList.remove("dark");
+        return;
+      }
+      document.getElementById("sun")?.classList.add("hidden");
+      document.body.classList.add("dark");
+      document.getElementById("moon")?.classList.remove("hidden");
+      localStorage.setItem("theme", "dark");
+    }
+  </script>
 </html>
