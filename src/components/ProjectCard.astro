@@ -1,0 +1,36 @@
+---
+import Heading from './Heading.astro';
+import Text from './Text.astro';
+
+type Props = {
+  name: string;
+  description: string;
+  githubLink?: string;
+  liveLink?: string;
+};
+
+const { name, description, githubLink, liveLink } = Astro.props;
+---
+
+<div class="flex flex-col gap-2 bg-neutral-800 text-white rounded-sm p-4">
+  <Heading level={3} className={`${liveLink && 'underline'}`} link={liveLink}>
+    {name}
+  </Heading>
+  <Text>{description}</Text>
+  <div class="flex gap-4">
+    {
+      githubLink && (
+        <a href={githubLink} target="_blank">
+          github
+        </a>
+      )
+    }
+    {
+      liveLink && (
+        <a href={liveLink} target="_blank" class="font-bold">
+          live {'->'}
+        </a>
+      )
+    }
+  </div>
+</div>

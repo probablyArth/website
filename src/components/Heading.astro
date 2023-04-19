@@ -1,0 +1,23 @@
+---
+type Props = {
+  level: 1 | 2 | 3;
+  className?: string;
+  link?: string | undefined;
+};
+
+const classes = ['text-5xl font-bold', 'text-3xl font-bold', 'text-2xl'];
+
+const { level, className, link } = Astro.props;
+---
+
+{
+  link ? (
+    <a class={`${classes[level - 1]} ${className}`} href={link} target="_blank">
+      <slot />
+    </a>
+  ) : (
+    <h1 class={`${classes[level - 1]} ${className}`}>
+      <slot />
+    </h1>
+  )
+}

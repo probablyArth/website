@@ -1,11 +1,55 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import Card from '../components/Card.astro';
+import Heading from '../components/Heading.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import SkillsContainer from '../components/SkillsContainer.astro';
+import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Arth Thapa">
-  <h1 class="text-5xl font-bold">Arth Thapa</h1>
-  <h2 class="text-2xl my-4">
-    Started as a means to kill time during COVID2020, turned into career fueled
-    by passion.
-  </h2>
+  <Heading level={1}>Arth Thapa</Heading>
+
+  <Heading level={3}>
+    I build stuff from code sometimes. <br />
+    started as a means to kill time during covid-20, turned into career fueled by
+    passion.
+  </Heading>
+  <Heading level={2}>this is what im currently good at</Heading>
+  <div class="flex gap-4 justify-between">
+    <Card title="frontend dev">
+      <SkillsContainer
+        skills={[
+          'react',
+          'tailwindcss',
+          'mantineUI',
+          'redux',
+          'firebase',
+          'appwrite',
+          'svelte',
+        ]}
+      />
+    </Card>
+    <Card title="backend dev">
+      <SkillsContainer
+        skills={[
+          'next',
+          'node',
+          'typescript',
+          'go',
+          'tRPC',
+          'mongoDB',
+          'prisma',
+          'express',
+          'django',
+          'docker',
+        ]}
+      />
+    </Card>
+  </div>
+  <Heading level={2}>this is what i've built so far</Heading>
+  <ProjectCard
+    name="leaderboards.online"
+    description="leaderboards.online provides the easiest and fastest way to setup beautiful leaderboards for anything. It even comes with rich API support to programmatically update the leaderboard and plug it into your apps :)"
+    liveLink="https://www.leaderboards.online"
+  />
 </Layout>

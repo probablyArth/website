@@ -1,0 +1,19 @@
+---
+interface Props {
+  skills: string[];
+}
+
+const { skills } = Astro.props;
+---
+
+<ul
+  class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 w-fit"
+>
+  {
+    skills.map((skill) => (
+      <li class="p-2 dark:bg-white dark:text-black text-white bg-neutral-800 rounded-sm">
+        {skill}
+      </li>
+    ))
+  }
+</ul>
