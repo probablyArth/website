@@ -1,36 +1,52 @@
 ---
-import Heading from './Heading.astro';
-import Text from './Text.astro';
+import Heading from "./Heading.astro";
+import Text from "./Text.astro";
+import { Icon } from "astro-icon";
 
 type Props = {
   name: string;
   description: string;
   githubLink?: string;
   liveLink?: string;
+  techUsed: string;
+  challengeFaced: string;
 };
 
-const { name, description, githubLink, liveLink } = Astro.props;
+const { name, description, githubLink, liveLink, techUsed, challengeFaced } =
+  Astro.props;
 ---
 
 <div class="flex flex-col gap-2 bg-neutral-800 text-white rounded-sm p-4">
-  <Heading level={3} className={`${liveLink && 'underline'}`} link={liveLink}>
-    {name}
-  </Heading>
-  <Text>{description}</Text>
   <div class="flex gap-4">
-    {
-      githubLink && (
-        <a href={githubLink} target="_blank">
-          github
-        </a>
-      )
-    }
-    {
-      liveLink && (
-        <a href={liveLink} target="_blank" class="font-bold">
-          live {'->'}
-        </a>
-      )
-    }
+    <Heading level={3} className={`${liveLink && "underline"}`} link={liveLink}>
+      {name}
+    </Heading>
+    <div class="flex gap-2">
+      {
+        githubLink && (
+          <a href={githubLink} target="_blank" class="text-sm underline">
+            <Icon size="32" name="mdi:github" />
+          </a>
+        )
+      }
+      {
+        liveLink && (
+          <a href={liveLink} target="_blank" class="text-sm underline">
+            <Icon size="32" name="ic:baseline-link" />
+          </a>
+        )
+      }
+    </div>
   </div>
+  <Text>{description}</Text>
+  <p class="text-sm">
+    <span class="font-bold">challenge faced</span> - <span
+      >{challengeFaced}</span
+    >
+  </p>
+  <p class="text-sm">
+    <span class="font-bold">tech used</span> - <span class="underline"
+      >{techUsed}</span
+    >
+  </p>
 </div>

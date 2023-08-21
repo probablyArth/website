@@ -2,9 +2,7 @@
 const { title } = Astro.props;
 ---
 
-<div
-  class="px-4 py-2 bg-white bg-opacity-10 rounded-md border-[1px] dark:border-stone-300 border-neutral-400 flex flex-col justify-center items-center gap-4"
->
-  <h1 class="text-3xl font-medium">{title}</h1>
+<div class="flex flex-col p-3 bg-white dark:bg-opacity-10 rounded-sm gap-4">
+  <h1 class="text-xl font-bold tracking-tighter">{title}</h1>
   <slot />
 </div>

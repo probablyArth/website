@@ -1,9 +1,9 @@
 ---
-import Card from '../components/Card.astro';
-import Heading from '../components/Heading.astro';
-import ProjectCard from '../components/ProjectCard.astro';
-import SkillsContainer from '../components/SkillsContainer.astro';
-import Layout from '../layouts/Layout.astro';
+import Card from "../components/Card.astro";
+import Heading from "../components/Heading.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import SkillsContainer from "../components/SkillsContainer.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Arth Thapa">
@@ -14,42 +14,78 @@ import Layout from '../layouts/Layout.astro';
     started as a means to kill time during covid-20, turned into career fueled by
     passion.
   </Heading>
+  <Heading level={2}>previous work</Heading>
+
+  <Heading level={2}>this is what i've built so far</Heading>
+  <ProjectCard
+    techUsed="NextJS, Express, Typescript, TailwindCSS, React Framer, React Query, Auth0, MongoDB"
+    name="leaderboards.online"
+    description="leaderboards.online provides the easiest and fastest way to setup beautiful leaderboards for anything. It even comes with rich API support to programmatically update the leaderboard and plug it into your apps :)"
+    challengeFaced="learned to implement features fast as per demand"
+    liveLink="https://www.leaderboards.online"
+    githubLink="https://github.com/leaderboards-online"
+  />
+  <ProjectCard
+    techUsed="NextJS, Python, Typescript, TailwindCSS, Mantine"
+    name="EzEdit"
+    description="A webapp with rich text editor to edit the docx file and translate that to html and ability to download as docx file."
+    challengeFaced="wrote a nodejs backend that spawned python processes because of lack of good library support in nodejs for the task"
+    liveLink="https://www.youtube.com/watch?v=12Mw8mDX4GQ"
+    githubLink="https://github.com/probablyArth/EzEdit"
+  />
+  <ProjectCard
+    techUsed="NextJS, TailwindCSS, Mantine, Firebase, Typescript"
+    name="organiez"
+    description="EZily organize events and distribute tasks among your peers for the same."
+    challengeFaced="learned to utilise time efficiently and build things fast"
+    liveLink="https://github.com/probablyArth/organiez"
+    githubLink="https://github.com/probablyArth/organiez"
+  />
+  <ProjectCard
+    techUsed="Typescript, JSON, NodeJS"
+    name="Jason"
+    description="A simple typesafe JSON ORM library that allows you to interact with data stored in a JSON database. The library provides a simple ORM-like interface for working with data."
+    challengeFaced="learned how to make npm modules and host them"
+    liveLink="https://github.com/probablyArth/jason"
+    githubLink="https://github.com/probablyArth/jason"
+  />
+  <p>
+    you can find all my projects at <a
+      class="underline"
+      href="https://github.com/probablyArth/"
+      target="_blank">github</a
+    >
+  </p>
   <Heading level={2}>this is what im currently good at</Heading>
   <div class="flex gap-4 justify-between">
     <Card title="frontend dev">
       <SkillsContainer
         skills={[
-          'react',
-          'tailwindcss',
-          'mantineUI',
-          'redux',
-          'firebase',
-          'appwrite',
-          'svelte',
+          "react",
+          "tailwindcss",
+          "mantineUI",
+          "redux",
+          "firebase",
+          "appwrite",
+          "svelte",
         ]}
       />
     </Card>
     <Card title="backend dev">
       <SkillsContainer
         skills={[
-          'next',
-          'node',
-          'typescript',
-          'go',
-          'tRPC',
-          'mongoDB',
-          'prisma',
-          'express',
-          'django',
-          'docker',
+          "next",
+          "node",
+          "typescript",
+          "go",
+          "tRPC",
+          "mongoDB",
+          "prisma",
+          "express",
+          "django",
+          "docker",
         ]}
       />
     </Card>
   </div>
-  <Heading level={2}>this is what i've built so far</Heading>
-  <ProjectCard
-    name="leaderboards.online"
-    description="leaderboards.online provides the easiest and fastest way to setup beautiful leaderboards for anything. It even comes with rich API support to programmatically update the leaderboard and plug it into your apps :)"
-    liveLink="https://www.leaderboards.online"
-  />
 </Layout>

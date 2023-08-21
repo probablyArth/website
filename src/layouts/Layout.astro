@@ -2,7 +2,7 @@
 export interface Props {
   title: string;
 }
-import { Icon } from 'astro-icon';
+import { Icon } from "astro-icon";
 const { title } = Astro.props;
 ---
 
@@ -29,7 +29,9 @@ const { title } = Astro.props;
       <div
         class="relative max-w-[1080px] min-h-screen h-full dark:bg-neutral-900 w-[90%] border-x-[2px] border-neutral-200 dark:border-stone-800 flex flex-col items-center px-4 sm:px-6 md:px-16 py-6 text-left bg-neutral-100 gap-10"
       >
-        <nav class="sticky top-0 flex justify-between w-full py-4 text-left">
+        <nav
+          class="sticky top-0 flex justify-between w-full py-4 text-left dark:bg-neutral-900 bg-neutral-100"
+        >
           <img
             src="/profile.jpeg"
             alt="@probablyarth"
@@ -38,7 +40,6 @@ const { title } = Astro.props;
             class="rounded-full"
             style="box-shadow: 0 0 1px transparent;"
           />
-          {console.log({ theme: localStorage.getItem('theme') })}
           <button id="themeToggle">
             <div id="moon">
               <Icon size="32" name="ph:moon-stars-fill" />
@@ -55,32 +56,32 @@ const { title } = Astro.props;
     </div>
   </body>
   <script>
-    const themeToggleButton = document.getElementById('themeToggle');
-    themeToggleButton?.addEventListener('click', handleThemeToggle);
-    let theme = localStorage.getItem('theme');
+    const themeToggleButton = document.getElementById("themeToggle");
+    themeToggleButton?.addEventListener("click", handleThemeToggle);
+    let theme = localStorage.getItem("theme");
 
-    if (theme === 'dark') {
-      document.getElementById('sun')?.classList.add('hidden');
-      document.getElementById('moon')?.classList.remove('hidden');
-      document.body.classList.add('dark');
+    if (theme === "dark") {
+      document.getElementById("sun")?.classList.add("hidden");
+      document.getElementById("moon")?.classList.remove("hidden");
+      document.body.classList.add("dark");
     } else {
-      document.body.classList.remove('dark');
-      document.getElementById('sun')?.classList.remove('hidden');
-      document.getElementById('moon')?.classList.add('hidden');
+      document.body.classList.remove("dark");
+      document.getElementById("sun")?.classList.remove("hidden");
+      document.getElementById("moon")?.classList.add("hidden");
     }
     function handleThemeToggle() {
-      let theme = localStorage.getItem('theme');
-      if (theme === 'dark') {
-        localStorage.setItem('theme', 'light');
-        document.getElementById('sun')?.classList.remove('hidden');
-        document.getElementById('moon')?.classList.add('hidden');
-        document.body.classList.remove('dark');
+      let theme = localStorage.getItem("theme");
+      if (theme === "dark") {
+        localStorage.setItem("theme", "light");
+        document.getElementById("sun")?.classList.remove("hidden");
+        document.getElementById("moon")?.classList.add("hidden");
+        document.body.classList.remove("dark");
         return;
       }
-      document.getElementById('sun')?.classList.add('hidden');
-      document.body.classList.add('dark');
-      document.getElementById('moon')?.classList.remove('hidden');
-      localStorage.setItem('theme', 'dark');
+      document.getElementById("sun")?.classList.add("hidden");
+      document.body.classList.add("dark");
+      document.getElementById("moon")?.classList.remove("hidden");
+      localStorage.setItem("theme", "dark");
     }
   </script>
 </html>
