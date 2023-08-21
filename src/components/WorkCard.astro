@@ -1,0 +1,46 @@
+---
+import Heading from "./Heading.astro";
+import Text from "./Text.astro";
+import { Icon } from "astro-icon";
+
+type Props = {
+  name: string;
+  description: string;
+  linkedinLink: string;
+  techUsed: string;
+  recommendation: string;
+  img: string;
+};
+
+const { name, description, techUsed, linkedinLink, recommendation, img } =
+  Astro.props;
+---
+
+<div class="flex flex-col gap-2 bg-neutral-800 text-white rounded-sm p-4">
+  <div class="flex gap-4">
+    <Heading
+      level={3}
+      className={`${linkedinLink && "underline"} font-bold`}
+      link={linkedinLink}
+    >
+      {name}
+    </Heading>
+    <div class="flex gap-2">
+      {
+        linkedinLink && (
+          <a href={linkedinLink} target="_blank" class="text-sm underline">
+            <Icon size="32" name="mdi:linkedin" />
+          </a>
+        )
+      }
+    </div>
+  </div>
+  <img src={img} />
+  <Text>- {description}</Text>
+  <p class="italic">- "{recommendation}"</p>
+  <p class="text-sm">
+    <span class="font-bold">tech used</span> - <span class="underline"
+      >{techUsed}</span
+    >
+  </p>
+</div>

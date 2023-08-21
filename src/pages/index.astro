@@ -3,6 +3,7 @@ import Card from "../components/Card.astro";
 import Heading from "../components/Heading.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import SkillsContainer from "../components/SkillsContainer.astro";
+import WorkCard from "../components/WorkCard.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
@@ -15,7 +16,14 @@ import Layout from "../layouts/Layout.astro";
     passion.
   </Heading>
   <Heading level={2}>previous work</Heading>
-
+  <WorkCard
+    techUsed="100ms, ReactJS, Redux, TailwindCSS, Express, MongoDB, Redis"
+    description="Made a fullstack one-on-one voice dating webapp."
+    recommendation="I have worked with Arth and he has tremendous knowledge on web development and many other technology. Definitely would recommend who is looking for a freelancer."
+    name="Mrutunjay Singh"
+    linkedinLink=""
+    img="/rec.png"
+  />
   <Heading level={2}>this is what i've built so far</Heading>
   <ProjectCard
     techUsed="NextJS, Express, Typescript, TailwindCSS, React Framer, React Query, Auth0, MongoDB"
