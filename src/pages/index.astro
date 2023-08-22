@@ -4,6 +4,7 @@ import Heading from "../components/Heading.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import SkillsContainer from "../components/SkillsContainer.astro";
 import WorkCard from "../components/WorkCard.astro";
+import Break from "../components/Break.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
@@ -15,16 +16,18 @@ import Layout from "../layouts/Layout.astro";
     started as a means to kill time during covid-20, turned into career fueled by
     passion.
   </Heading>
-  <Heading level={2}>previous work</Heading>
+  <Break />
+  <Heading level={2}>Previous Work</Heading>
   <WorkCard
     techUsed="100ms, ReactJS, Redux, TailwindCSS, Express, MongoDB, Redis"
     description="Made a fullstack one-on-one voice dating webapp."
     recommendation="I have worked with Arth and he has tremendous knowledge on web development and many other technology. Definitely would recommend who is looking for a freelancer."
     name="Mrutunjay Singh"
-    linkedinLink=""
+    linkedinLink="https://www.linkedin.com/in/probablyarth/"
     img="/rec.png"
   />
-  <Heading level={2}>this is what i've built so far</Heading>
+  <Break />
+  <Heading level={2}>This is what I've built so far</Heading>
   <ProjectCard
     techUsed="NextJS, Express, Typescript, TailwindCSS, React Framer, React Query, Auth0, MongoDB"
     name="leaderboards.online"
@@ -64,7 +67,8 @@ import Layout from "../layouts/Layout.astro";
       target="_blank">github</a
     >
   </p>
-  <Heading level={2}>this is what im currently good at</Heading>
+  <Break />
+  <Heading level={2}>This is what I'm currently good at</Heading>
   <div class="flex gap-4 justify-between">
     <Card title="frontend dev">
       <SkillsContainer
@@ -92,6 +96,7 @@ import Layout from "../layouts/Layout.astro";
           "express",
           "django",
           "docker",
+          "postgreSQL",
         ]}
       />
     </Card>
