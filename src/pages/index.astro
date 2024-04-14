@@ -6,6 +6,8 @@ import SkillsContainer from "../components/SkillsContainer.astro";
 import WorkCard from "../components/WorkCard.astro";
 import Break from "../components/Break.astro";
 import Layout from "../layouts/Layout.astro";
+import Text from "../components/Text.astro";
+import Link from "../components/Link.astro";
 ---
 
 <Layout title="Arth Thapa">
@@ -16,6 +18,12 @@ import Layout from "../layouts/Layout.astro";
     started as a means to kill time during covid-20, turned into career fueled by
     passion.
   </Heading>
+  <Break />
+  <Heading level={2}>What I'm currently working on</Heading>
+  <Text>I'm currently working on a DBMS which is supposed to be a one-command installable system</Text>
+  <Text>The DBMS uses json files, this is further work on my pre-existing json files ORM (<Link href="https://github.com/probablyarth/jason">jason</Link>)</Text>
+  <Link href="https://github.com/probablyarth/jason-engine">Link to the project</Link>
+  <Text></Text>
   <Break />
   <Heading level={2}>Previous Work</Heading>
   <WorkCard

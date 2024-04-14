@@ -1,0 +1,12 @@
+---
+import Icon from "astro-icon";
+
+const { href } = Astro.props;
+---
+
+<span class="items-center cursor-pointer hover:underline gap-1 inline-flex">
+  <Icon size="16" name="ic:baseline-link" />
+  <a href={href} class="text-red-300">
+    <slot />
+  </a>
+</span>
